@@ -1,2 +1,2 @@
 final serverURL =
-    "https://rfid-server.onrender.com";
+    "https://rfid-server-sem7-d37e.onrender.com";
