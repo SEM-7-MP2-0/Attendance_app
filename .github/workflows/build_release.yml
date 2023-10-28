@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     name: Build & Release
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
 
@@ -18,9 +18,8 @@ jobs:
           distribution: 'zulu'
           java-version: "17.x"
 
-      - uses: SpicyPizza/create-envfile@v1.3
-        with: 
-          envkey_API_KEY: ${{ secrets.API_KEY }}
+      - name: Create .env file
+        run: echo "${{ secrets.API_KEY }}" > .env
 
       - uses: subosito/flutter-action@v2
         with:
