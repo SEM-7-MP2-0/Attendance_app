@@ -8,8 +8,10 @@ import 'Pages/stats.dart';
 import 'Provider/user.dart';
 import 'Styles/colors.dart';
 import 'Styles/textstyles.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
+Future<void> main() async {
+  await dotenv.load();
   runApp(const MyApp());
 }
 
