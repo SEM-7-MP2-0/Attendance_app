@@ -5,6 +5,8 @@ import 'package:attendenceapp/Pages/startattendance.dart';
 import 'package:attendenceapp/Pages/stats.dart';
 import 'package:attendenceapp/Pages/studentProfile.dart';
 import 'package:attendenceapp/Pages/uploadstudents.dart';
+import 'package:attendenceapp/Pages/mybatch.dart';
+import 'package:attendenceapp/Pages/defaulterpage.dart';
 import 'package:attendenceapp/Provider/user.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -45,6 +47,14 @@ class _HomePageState extends State<HomePage> {
             label: 'Upload Students',
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.list),
+            label: 'My Batch',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.book_sharp),
+            label: 'Defaulter List',
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Profile',
           ),
@@ -70,6 +80,8 @@ class _HomePageState extends State<HomePage> {
         return <Widget>[
           StartAttendancePage(),
           UploadStudents(),
+          MyBatchesPage(),
+          defaulterpage(),
           FacultyProfilePage(),
         ];
       case Users.student:
